@@ -82,14 +82,21 @@ docker run -v "/path/to/input:/input" -v "/path/to/output:/output" financial-acc
  Dependencies
  Inside Docker
 Programming Language: C++
+
 Database: Oracle ERP data tables
+
 Libraries: 
 Apache POI: For Excel file processing.
+
 OpenCSV: For CSV file handling.
+
 Log4j: For logging operations.
+
 Docker Image: 
 Base image: openjdk:11-jre-slim (Java 11 runtime)
+
 Oracle Database client libraries for table interactions.
+
 Output stored in .xlsx or .csv format.
 
 
