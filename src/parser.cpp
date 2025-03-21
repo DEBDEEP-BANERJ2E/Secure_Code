@@ -3,13 +3,13 @@
 #include <fstream>
 #include <sstream>
 
-// Reads a CSV file and returns vector of rows
+// Reads a CSV file and returns a vector of rows
 std::vector<std::vector<std::string>> parseCSV(const std::string& filename) {
     std::vector<std::vector<std::string>> data;
-    std::ifstream file("csv_input/" + filename); // Ensure correct path
+    std::ifstream file("../csv_input/" + filename);
 
     if (!file.is_open()) {
-        std::cerr << "Error opening file: " << filename << std::endl;
+        std::cerr << "❌ Error: Cannot open file " << filename << "\n";
         return data;
     }
 
@@ -17,7 +17,7 @@ std::vector<std::vector<std::string>> parseCSV(const std::string& filename) {
     bool firstLine = true;
 
     while (std::getline(file, line)) {
-        if (firstLine) { firstLine = false; continue; }  // Skip header row
+        if (firstLine) { firstLine = false; continue; }  // Skip header
 
         std::vector<std::string> row;
         std::stringstream ss(line);

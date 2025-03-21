@@ -23,7 +23,7 @@ set(HEADERS
     include/utils.h
     include/privilege_lookup.h
     include/entitlement_lookup.h
-    include/sod_violations.ch
+    include/sod_violations.h
 )
 
 # Add executable

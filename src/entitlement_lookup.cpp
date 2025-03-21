@@ -1,52 +1,51 @@
 #include "entitlement_lookup.h"
 #include "privilege_lookup.h"
 #include "parser.h"
+#include "role_lookup.h"
+#include "user_lookup.h"
 #include <iostream>
 #include <unordered_set>
 
-// Get ACCESS_POINT_ID from ENTITLEMENT NAME
-std::string getAccessPointID(const std::string& entitlement_name) {
+// Get ACCESS_POINT_IDs for a given entitlement
+std::vector<std::string> getAccessPointIDs(const std::string& entitlement_name) {
+    std::vector<std::string> access_point_ids;
     auto entitlement_data = parseCSV("ENTITLEMENT_MST.csv");
+
     for (const auto& row : entitlement_data) {
         if (row.size() > 2 && row[0] == entitlement_name) {  // Column 0 = ACCESS_ENTITLEMENT
-            return row[2];  // Column 2 = ACCESS_POINT_ID
+            access_point_ids.push_back(row[2]);  // Column 2 = ACCESS_POINT_ID
         }
     }
-    return "";
+    return access_point_ids;
 }
 
-// Get PRIVILEGE_ID from ACCESS_POINT_ID
-std::string getPrivilegeIDFromAccessPoint(const std::string& access_point_id) {
-    auto privilege_data = parseCSV("XX_7_PVLGS_MASTER_RPT.csv");
-    for (const auto& row : privilege_data) {
-        if (row.size() > 2 && row[1] == access_point_id) {  // Column 1 = NAME
-            return row[2];  // Column 2 = PRIVILEGE_ID
-        }
-    }
-    return "";
-}
-
-// Get USER_IDs for an Entitlement
+// Get USERS for a given entitlement
 std::vector<std::string> getUserIDsForEntitlement(const std::string& entitlement_name) {
-    std::string access_point_id = getAccessPointID(entitlement_name);
-    if (access_point_id.empty()) return {};
+    std::vector<std::string> user_ids;
+    
+    // Step 1: Get ACCESS_POINT_IDs
+    std::vector<std::string> access_points = getAccessPointIDs(entitlement_name);
+    if (access_points.empty()) return {};
 
-    std::string privilege_id = getPrivilegeIDFromAccessPoint(access_point_id);
-    if (privilege_id.empty()) return {};
+    // Step 2: Get PRIVILEGE_IDs (Use function from privilege_lookup)
+    std::vector<std::string> privilege_ids = getPrivilegeIDsFromAccessPoints(access_points);
+    if (privilege_ids.empty()) return {};
 
-    std::vector<std::string> role_ids = getRolesForPrivilege(privilege_id);
+    // Step 3: Get ROLE_IDs (Use function from privilege_lookup)
+    std::vector<std::string> role_ids = getRolesForPrivileges(privilege_ids);
     if (role_ids.empty()) return {};
 
-    std::unordered_set<std::string> user_ids;
-    auto user_role_data = parseCSV("XX_3_USER_ROLE_MAPPING_RPT.csv");
-
+    // Step 4: Traverse role hierarchy
+    std::unordered_set<std::string> final_roles;
     for (const auto& role_id : role_ids) {
-        for (const auto& row : user_role_data) {
-            if (row.size() > 2 && row[0] == role_id) { // Column 0 = ROLE_ID
-                user_ids.insert(row[2]);  // Column 2 = USER_ID
-            }
-        }
+        final_roles.insert(getTopParentRole(role_id));
     }
 
-    return std::vector<std::string>(user_ids.begin(), user_ids.end());
+    // Step 5: Get USER_IDs from roles
+    for (const auto& parent_role_id : final_roles) {
+        std::vector<std::string> users = getUserIDsForRole(parent_role_id);
+        user_ids.insert(user_ids.end(), users.begin(), users.end());
+    }
+
+    return user_ids;
 }

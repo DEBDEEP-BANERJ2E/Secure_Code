@@ -1,13 +1,13 @@
 #ifndef SOD_VIOLATIONS_H
 #define SOD_VIOLATIONS_H
 
-#include <string>
 #include <vector>
+#include <string>
 
-// Get entitlements (ENT_LEG1, ENT_LEG2) for a given SOD_POLICY_CODE
+// Function to retrieve entitlements (ENT_LEG1, ENT_LEG2) from SOD_POLICY_CODE
 std::pair<std::string, std::string> getEntitlementsForSOD(const std::string& sod_policy_code);
 
-// Find common users between two entitlement lists
-std::vector<std::string> findCommonUsers(const std::vector<std::string>& users1, const std::vector<std::string>& users2);
+// Function to detect SoD violations and return conflicting users
+std::vector<std::string> detectSODViolations(const std::string& sod_policy_code);
 
-#endif
+#endif // SOD_VIOLATIONS_H

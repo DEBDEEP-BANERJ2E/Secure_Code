@@ -4,10 +4,10 @@
 #include <string>
 #include <vector>
 
-// Get PRIVILEGE_ID for a given PRIVILEGE NAME
-std::string getPrivilegeID(const std::string& privilege_name);
+// Finds PRIVILEGE_IDs for given ACCESS_POINT_IDs
+std::vector<std::string> getPrivilegeIDsFromAccessPoints(const std::vector<std::string>& access_points);
 
-// Get ROLE_IDs for a given PRIVILEGE_ID
-std::vector<std::string> getRolesForPrivilege(const std::string& privilege_id);
+// Finds ROLE_IDs for given PRIVILEGE_IDs
+std::vector<std::string> getRolesForPrivileges(const std::vector<std::string>& privilege_ids);
 
-#endif
+#endif // PRIVILEGE_LOOKUP_H
