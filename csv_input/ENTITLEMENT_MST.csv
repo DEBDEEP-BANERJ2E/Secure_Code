@@ -1,0 +1,63 @@
+ACCESS_ENTITLEMENT,ACCESS_POINT,ACCESS_POINT_ID,ACCESS_POINT_DESCRIPTION,ACCESS_POINT_TYPE,PRIV_MODULE_DESCRIPTION
+Create Purchase Orders,Generate Purchase Order,PO_GENERATE_PURCHASE_ORDER_PRIV,Allows a procurement agent to run the generate purchase order concurrent program.,Privilege,Procurement
+Create Purchase Orders,Change Purchase Order,PO_CHANGE_PURCHASE_ORDER_PRIV,Allows a procurement agent to initiate changes to an approved purchase order ,Privilege,Procurement
+Create Purchase Orders,Create Purchase Order from Requisitions,PO_CREATE_PURCHASE_ORDER_FROM_REQUISITIONS_PRIV,Allows a procurement agent to add a requisition line to a purchase order or update a purchase order line with a backing requisition line  The purchase order could be in an open or draft status ,Privilege,Procurement
+Create Purchase Orders,Create Purchase Order,PO_CREATE_PURCHASE_ORDER_PRIV,Allows a procurement agent to create purchase orders without backing requisition lines and update purchase orders with or without backing requisition lines ,Privilege,Procurement
+Create Purchase Orders,Import Purchase Order,PO_IMPORT_PURCHASE_ORDER_PRIV,Allows a procurement agent to run the Import Purchase Order concurrent program ,Privilege,Procurement
+Create Purchase Orders,Manage Purchase Order by REST Service,PO_MANAGE_PO_REST_SERVICE_PRIV,Allows users to call all methods except administrative methods with the Purchase Order REST service ,Privilege,Procurement
+Create Purchase Orders,Manage Purchase Order by Web Service,PO_MANAGE_PURCHASE_ORDER_WEB_SERVICE_PRIV,Allows management of purchase orders using web service ,Privilege,Procurement
+Create Purchase Orders,Reassign Purchasing Document,PO_REASSIGN_PURCHASING_DOCUMENT_PRIV,Allows a procurement agent to run the Reassign Purchasing Documents concurrent program ,Privilege,Procurement
+Create Payments,Create Payables Payment,AP_CREATE_PAYABLES_PAYMENT_PRIV,Allows creation of a single payment without submitting a payment process request ,Privilege,Procurement
+Create Payments,Edit Payables Payment,AP_EDIT_PAYABLES_PAYMENT_PRIV,Allows editing of Oracle Fusion Payables payments ,Privilege,Procurement
+Create Payments,Manage Payables Payment Process Request,AP_MANAGE_PAYABLES_PAYMENT_PROCESS_REQUEST_PRIV,Allows initiation of a single payment process request batch program for a particular payment process request selection and processing criteria ,Privilege,Procurement
+Create Payments,Manage Payables Payment Process Request Template,AP_MANAGE_PAYABLES_PAYMENT_PROCESS_REQUEST_TEMPLATE_PRIV,Allows creation and management of payment process request templates with predefined selection criteria  payment attributes  and processing instructions ,Privilege,Procurement
+Create Payments,Process Payables Payment Process Request,AP_PROCESS_PAYABLES_PAYMENT_PROCESS_REQUEST_PRIV,Allows processing of Oracle Fusion Payables payment process requests ,Privilege,Payables  Procure to Pay  Purchasing
+Create Payments,Reissue Payables Payment,AP_REISSUE_PAYABLES_PAYMENT_PRIV,Allows correction of check printing issues by voiding the original payment and creating a new payment for the same set of invoices ,Privilege,Payables  Procure to Pay  Purchasing
+Create Payments,Stop Payables Payment,AP_STOP_PAYABLES_PAYMENT_PRIV,Allows recording of requests to a bank to stop payment ,Privilege,Payables  Procure to Pay  Purchasing
+Create Payments,Submit Payables Payment Process Request,AP_SUBMIT_PAYABLES_PAYMENT_PROCESS_REQUEST_PRIV,Allows initiation of a payment process request with invoice selection criteria and payment processing options ,Privilege,Payables  Procure to Pay  Purchasing
+Enter Journals,Correct Journal Import Errors,GL_CORRECT_JOURNAL_IMPORT_ERRORS_PRIV,Allows correction of journal import errors.,Privilege,Procurement
+Enter Journals,Manage Journal Requiring Approval,GL_APPROVE_JOURNAL_PRIV,Allows review of the journals requiring approval.,Privilege,Procurement
+Enter Journals,Run Import Journals By Program Call,GL_RUN_IMPORT_JOURNALS_VIA_PROGRAM_CALL_PRIV,Allows submission of the journal import program by a program call.,Privilege,Procurement
+Enter Journals,Run Import Journals Program,GL_RUN_IMPORT_JOURNALS_PROGRAM_PRIV,Allows submission of the journal import program using the Oracle Fusion Enterprise Scheduler Services.,Privilege,Procurement
+Enter Journals,Generate Oracle Fusion General Ledger Revaluation,GL_GENERATE_GENERAL_LEDGER_CURRENCY_REVALUATION_PRIV,Allows revaluation of account balances.,Privilege,Financials
+Enter Journals,Run Income Statement Closing Journals Program,GL_RUN_INCOME_STATEMENT_CLOSING_JOURNALS_PROGRAM_PRIV,Allows submission of the income statement closing journals program which creates closing journal entries.,Privilege,Financials
+Enter Journals,Delete Journal,GL_DELETE_JOURNAL_PRIV,Allows deletion of journals.,Privilege,Financials
+Enter Journals,Enter Journal for Non-Business Day Transactions,GL_ENTER_JOURNAL_FOR_NON_BUSINESS_DAY_TRANSACTIONS_PRIV,Allows entry of journals for non-business day transactions.,Privilege,Financials
+Enter Journals,Generate Oracle Fusion General Ledger Allocation Formula,GL_GENERATE_GENERAL_LEDGER_ALLOCATION_FORMULA_PRIV,Allows generation of allocation rules or rule sets.,Privilege,Financials
+Enter Journals,Override Journal Accounted Amount,GL_OVERRIDE_ACCOUNTED_AMOUNT_IN_JOURNAL_PRIV,Allows overrides of the accounted amount when entering journals.,Privilege,Financials
+Enter Journals,Run Balance Sheet Closing Journals Program,GL_RUN_BALANCE_SHEET_CLOSING_JOURNALS_PROGRAM_PRIV,Allows submission of the create balance sheet closing journals program.,Privilege,Financials
+Enter Journals,Transfer E-Business Suite Balances to Financial Reporting Cloud Service,GL_TRANSFER_E_BUSINESS_SUITE_BALANCES_TO_FINANCIAL_REPORTING_CLOUD_SERVICE_PRIV,Allows balance transfer from E-Business Suite General Ledger to Oracle Fusion General Ledger to support the co-existence solution with E-Business Suite for Oracle Fusion Cloud reporting.,Privilege,Financials
+Enter Journals,Transfer Balances Cross Ledgers,GL_TRANSFER_BALANCES_CROSS_LEDGERS_PRIV,Allows transfer of balances across ledgers.,Privilege,Financials
+Enter Journals,Define Oracle Fusion General Ledger Revaluation,GL_SET_UP_GENERAL_LEDGER_CURRENCY_REVALUATION_PRIV,Allows creation of revaluation definitions.,Privilege,Financials
+Enter Journals,Reverse Journal,GL_REVERSE_JOURNAL_PRIV,Allows reversal of journals.,Privilege,Financials
+Enter Journals,Run Create Opening Balance Journals in Reporting Currency Program,GL_RUN_CREATE_OPENING_BALANCE_JOURNALS_IN_REPORTING_CURRENCY_PROGRAM_PRIV,Allows submission of the create opening balance journals in reporting currency program.,Privilege,Financials
+Enter Journals,Run Automatic Reversal Program,GL_RUN_AUTOMATIC_REVERSAL_PROGRAM_PRIV,Allows submission of the automatic reversal program.,Privilege,Financials
+Enter Journals,Override Journal Reversal Method,GL_OVERRIDE_JOURNAL_REVERSAL_METHOD_PRIV,Allows overrides of the journals reversal method.,Privilege,Financials
+Enter Journals,Maintain Balance Level Secondary Ledgers,GL_MAINTAIN_BALANCE_LEVEL_SECONDARY_LEDGERS_PRIV,Allows maintenance of balance level secondary ledgers.,Privilege,Financials
+Enter Journals,Enter Journal,GL_ENTER_ACTUAL_JOURNAL_PRIV,Allows creation of journals.,Privilege,Financials
+Enter Journals,Run Delete Journal Import Data Program,GL_RUN_DELETE_JOURNAL_IMPORT_DATA_PROGRAM_PRIV,Allows submission of the imported journal data deletion program.,Privilege,Financials
+Enter Journals,Run Revalue Balances Program,GL_RUN_REVALUE_BALANCES_PROGRAM_PRIV,Allows submission of the revaluation balances program.,Privilege,Financials
+Enter Journals,Check Funds,XCC_CHECK_FUNDS_PRIV,Check whether sufficient funds are available for a transactions,Privilege,Financials
+Enter Journals,Reserve Funds,XCC_RESERVE_FUNDS_PRIV,"Check whether sufficient funds are available for a transactions, and if so, reserve the funds",Privilege,Financials
+Enter Journals,Enter Journal By Spreadsheet,GL_ENTER_ACTUAL_JOURNAL_SPREADSHEET_PRIV,Allows creation of journals using a spreadsheet.,Privilege,Financials
+Create Customer,Create Customer,AR_CREATE_CUSTOMER_PRIV,Create new customers to record and account for transactions  transaction activities  and other attributes of the customer relationship ,Privilege,Order to Cash
+Create Customer,Manage Customers,AR_MANAGE_CUSTOMERS_PRIV,Manage customer account and site information  and the relationship with the customer ,Privilege,Order to Cash
+Create Sales Order,Monitor Sales Order,DOO_MONITOR_SALES_ORDER_PRIV,"
+Allows access to the order orchestration work area. The order orchestration work area is the central navigation point for all orchestration-related transactional tasks.",Privilege,Order to Cash
+Create Sales Order,Initiate Order,FOM_CREATE_ORDER_PRIV,"
+Allows the end user to create a new order or to change an existing order.",Privilege,Order to Cash
+Create Sales Order,Import Order,FOM_IMPORT_ORDER_PRIV,Allows the end user to import orders into the Order Management application.,Privilege,Order to Cash
+Create Sales Order,Submit Order,FOM_SUBMIT_ORDER_PRIV,"
+Allows the end user to book an order.",Privilege,Order to Cash
+Create Sales Order,Revise Order,"
+FOM_REVISE_ORDER_PRIV",Allows the end user to change an existing order.,Privilege,Order to Cash
+Create User,Create User,PER_CREATE_USER_PRIV,Allows creation of users ,Privilege,Human Capital Management
+Manage Payroll,Manage Payroll Relationship,PAY_MAINTAIN_PERSONAL_PAYROLL_RELATIONSHIP_PRIV,Manage Payroll Relationship,Privilege,Human Capital Management
+Manage Payroll,Calculate Payroll QuickPay,PAY_PROCESS_PAYROLL_QUICKPAY_PRIV,Calculate Payroll QuickPay,Privilege,Human Capital Management
+Manage Payroll,Calculate Payroll,PAY_PROCESS_PAYROLL_RUN_PRIV,Process payroll run,Privilege,Human Capital Management
+Manage Payroll,Retry Payroll Process,PAY_RETRY_PAYROLL_PROCESS_PRIV,Rerun an existing payroll process that has outstanding Employees to process,Privilege,Human Capital Management
+Manage Payroll,Recalculate Payroll for Retroactive Changes,PAY_RUN_RETRO_PAY_PROCESS_PRIV,Recalculate Payroll for Retroactive Changes,Privilege,Human Capital Management
+Set Up Procurement,Manage Buyer Assignment Rules,PO_MANAGE_BUYER_ASSIGNMENT_RULES_PRIV,Allows a procurement manager to manage buyer assignment rules.,,
+Set Up Procurement,Change Approved Supplier List Entry,PO_CHANGE_APPROVED_SUPPLIER_LIST_ENTRY_PRIV,"Allows a procurement agent to search, view, create, and change approved supplier list entries.",,
+Set Up Procurement,Generate Approved Supplier List Entry,PO_GENERATE_APPROVED_SUPPLIER_LIST_ENTRY_PRIV,Allows a procurement agent to run the Generate Approved Supplier List concurrent program.,,
+Set Up Procurement,Manage Procurement Agent,PO_MANAGE_PRC_AGENT_PRIV,Allows a procurement manager or administrator to manage procurement agents.,,

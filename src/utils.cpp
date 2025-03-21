@@ -1,13 +1,14 @@
 #include "utils.h"
 #include <iostream>
 
-// Loads predefined SoD conflict rules
-std::unordered_map<std::string, std::unordered_set<std::string>> loadConflictRules() {
-    std::unordered_map<std::string, std::unordered_set<std::string>> conflicts;
+void printUsers(const std::unordered_set<std::string>& users) {
+    if (users.empty()) {
+        std::cout << "No users found with access to the given ACCESS_POINT_ID." << std::endl;
+        return;
+    }
 
-    // Define conflicting roles manually or load from a file
-    conflicts["Admin"].insert("Auditor");
-    conflicts["Finance"].insert("Purchasing");
-    
-    return conflicts;
+    std::cout << "Users with access:" << std::endl;
+    for (const auto& user : users) {
+        std::cout << "- " << user << std::endl;
+    }
 }

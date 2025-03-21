@@ -3,33 +3,36 @@
 #include <fstream>
 #include <sstream>
 
-std::vector<RoleAssignment> parseCSV(const std::string& filename) {
-    std::vector<RoleAssignment> assignments;
+// Generic CSV parser function
+std::vector<std::vector<std::string>> parseCSV(const std::string& filename) {
+    std::vector<std::vector<std::string>> data;
     std::ifstream file(filename);
     
     if (!file.is_open()) {
         std::cerr << "Error opening file: " << filename << std::endl;
-        return assignments;
+        return data;
     }
 
     std::string line;
-    bool firstLine = true; // To skip the header
+    bool firstLine = true;  // Skip the header
 
     while (std::getline(file, line)) {
         if (firstLine) {
             firstLine = false;
-            continue;  // Skip the header row
+            continue;
         }
 
+        std::vector<std::string> row;
         std::stringstream ss(line);
-        std::string user, role;
+        std::string cell;
 
-        std::getline(ss, user, ',');  // Read first column
-        std::getline(ss, role, ',');  // Read second column
+        while (std::getline(ss, cell, ',')) {
+            row.push_back(cell);
+        }
 
-        assignments.push_back({user, role});
+        data.push_back(row);
     }
 
     file.close();
-    return assignments;
+    return data;
 }

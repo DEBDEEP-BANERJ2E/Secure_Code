@@ -1,16 +1,14 @@
 #ifndef PARSER_H
 #define PARSER_H
 
+#include "data_structures.h"
 #include <vector>
 #include <string>
 
-// Structure to hold user-role mappings
-struct RoleAssignment {
-    std::string user;
-    std::string role;
-};
+// Parses CSV and returns a vector of rows
+std::vector<std::vector<std::string>> parseCSV(const std::string& filename);
 
-// Function to parse a CSV file
-std::vector<RoleAssignment> parseCSV(const std::string& filename);
+// Loads RBAC data from CSV files
+RBACData loadRBACData();
 
 #endif // PARSER_H

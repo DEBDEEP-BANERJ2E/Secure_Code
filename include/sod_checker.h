@@ -1,23 +1,13 @@
 #ifndef SOD_CHECKER_H
 #define SOD_CHECKER_H
 
-#include <vector>
-#include <unordered_map>
+#include "data_structures.h"
 #include <unordered_set>
-#include "parser.h"  // Include parser.h for RoleAssignment
 
-// Define Hierarchy structure
-struct Hierarchy {
-    std::unordered_map<std::string, std::vector<std::string>> roleHierarchy;
-};
-
-// Define ConflictMatrix structure
-struct ConflictMatrix {
-    std::unordered_map<std::string, std::vector<std::string>> conflicts;
-};
-
-// Function prototypes
-Hierarchy buildHierarchy(const std::vector<RoleAssignment>& assignments);
-ConflictMatrix detectConflicts(const Hierarchy& hierarchy);
+// Finds users who have access to a given ACCESS_POINT_ID
+std::unordered_set<std::string> getUsersWithAccess(
+    const std::string& access_point_id,
+    const RBACData& rbac_data
+);
 
 #endif // SOD_CHECKER_H

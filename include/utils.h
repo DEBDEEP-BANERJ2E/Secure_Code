@@ -1,9 +1,10 @@
 #ifndef UTILS_H
 #define UTILS_H
 
-#include "sod_checker.h"
+#include <unordered_set>
+#include <string>
 
-// Function prototype to save results
-void saveResults(const std::string& filename, const ConflictMatrix& conflicts);
+// Prints the users found with access to a given ACCESS_POINT_ID
+void printUsers(const std::unordered_set<std::string>& users);
 
 #endif // UTILS_H
