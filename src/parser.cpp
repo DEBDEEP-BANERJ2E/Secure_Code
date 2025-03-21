@@ -6,7 +6,7 @@
 // Reads a CSV file and returns vector of rows
 std::vector<std::vector<std::string>> parseCSV(const std::string& filename) {
     std::vector<std::vector<std::string>> data;
-    std::ifstream file("../csv_input/" + filename);
+    std::ifstream file("csv_input/" + filename); // Ensure correct path
 
     if (!file.is_open()) {
         std::cerr << "Error opening file: " << filename << std::endl;

@@ -10,6 +10,8 @@ set(SOURCES
     src/role_lookup.cpp  # Handles role hierarchy
     src/user_lookup.cpp  # Handles user lookups
     src/privilege_lookup.cpp # Handles priviledge lookups
+    src/entitlement_lookup.cpp # Handles entitlementlookups
+    src/sod_violations.cpp 
     src/utils.cpp
 )
 
@@ -20,6 +22,8 @@ set(HEADERS
     include/user_lookup.h
     include/utils.h
     include/privilege_lookup.h
+    include/entitlement_lookup.h
+    include/sod_violations.ch
 )
 
 # Add executable
