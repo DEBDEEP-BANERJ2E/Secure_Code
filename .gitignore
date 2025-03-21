@@ -16,16 +16,6 @@ CMakeFiles/
 cmake_install.cmake
 Makefile
 
-# Ignore CSV input/output files (optional, if you don’t want to track CSVs)
-csv_input/
-output/
-logs/
-
-# Ignore Python virtual environment (if used for CSV conversion)
-venv/
-__pycache__/
-*.pyc
-*.pyo
 
 # Ignore IDE/Editor files
 .vscode/
