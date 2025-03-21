@@ -1,0 +1,44 @@
+# Ignore build artifacts
+/build/
+bin/
+*.o
+*.out
+*.exe
+*.log
+*.a
+*.so
+*.dll
+*.dylib
+
+# Ignore CMake files
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+
+# Ignore CSV input/output files (optional, if you don’t want to track CSVs)
+csv_input/
+output/
+logs/
+
+# Ignore Python virtual environment (if used for CSV conversion)
+venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# Ignore IDE/Editor files
+.vscode/
+*.swp
+*.swo
+*.swn
+.DS_Store
+.idea/
+*.iml
+*.user
+*.sublime-workspace
+*.sublime-project
+
+# Ignore core dumps
+core.*
+*.core

@@ -3,24 +3,21 @@
 #include <fstream>
 #include <sstream>
 
-// Generic CSV parser function
+// Reads a CSV file and returns vector of rows
 std::vector<std::vector<std::string>> parseCSV(const std::string& filename) {
     std::vector<std::vector<std::string>> data;
-    std::ifstream file(filename);
-    
+    std::ifstream file("../csv_input/" + filename);
+
     if (!file.is_open()) {
         std::cerr << "Error opening file: " << filename << std::endl;
         return data;
     }
 
     std::string line;
-    bool firstLine = true;  // Skip the header
+    bool firstLine = true;
 
     while (std::getline(file, line)) {
-        if (firstLine) {
-            firstLine = false;
-            continue;
-        }
+        if (firstLine) { firstLine = false; continue; }  // Skip header row
 
         std::vector<std::string> row;
         std::stringstream ss(line);

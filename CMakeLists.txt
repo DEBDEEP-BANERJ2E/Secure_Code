@@ -7,11 +7,17 @@ set(CMAKE_CXX_STANDARD 17)
 set(SOURCES
     src/main.cpp
     src/parser.cpp
+    src/role_lookup.cpp  # Handles role hierarchy
+    src/user_lookup.cpp  # Handles user lookups
+    src/utils.cpp
 )
 
 # Define the header files
 set(HEADERS
     include/parser.h
+    include/role_lookup.h
+    include/user_lookup.h
+    include/utils.h
 )
 
 # Add executable
