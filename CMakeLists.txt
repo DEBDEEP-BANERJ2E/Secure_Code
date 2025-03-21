@@ -9,6 +9,7 @@ set(SOURCES
     src/parser.cpp
     src/role_lookup.cpp  # Handles role hierarchy
     src/user_lookup.cpp  # Handles user lookups
+    src/privilege_lookup.cpp # Handles priviledge lookups
     src/utils.cpp
 )
 
@@ -18,6 +19,7 @@ set(HEADERS
     include/role_lookup.h
     include/user_lookup.h
     include/utils.h
+    include/privilege_lookup.h
 )
 
 # Add executable
