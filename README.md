@@ -55,24 +55,33 @@ Building and Running the Docker Container
 Cloning the Repository
 bash
 Copy code:
+
 git clone https://github.com/DEBDEEP-BANERJ2E/Secure_Code
+
 cd Secure_Code
+
  Building the Docker Image
 bash
-Copy code
+Copy code:
+
 docker pull debdeep3613peed/secure-code:latest
+
 Running the Container
+
 1.Prepare your test input in a directory named /input.
+
 2.Run the Docker container with volume mapping:
+
 bash
 Copy code
+
 docker run -v "/path/to/input:/input" -v "/path/to/output:/output" financial-access-risk-analysis /input/test_case.xlsx /output/results.xlsx
 /input: Directory containing the input Excel/CSV files.
 /output: Directory where the results will be stored.
 
  Dependencies
  Inside Docker
-Programming Language: Java / C++
+Programming Language: C++
 Database: Oracle ERP data tables
 Libraries: 
 Apache POI: For Excel file processing.
@@ -89,8 +98,7 @@ Ensures compliance with Oracle Fusion security policies.
 Prevents unauthorized access by identifying SoD violations.
 Improves audit readiness with detailed reports.
 
-License
-This project is licensed under the MIT License. See the LICENSE file for details
+
 
 TEAM DR
 (DEBDEEP BANERJEE,ROHAN JAIN)
